@@ -18,22 +18,81 @@ import UserList from './components/user-list.component'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Rourte>
+      <div className="App">
+        <header className="App-header">
+
+          <NavBar bg="dark" variant="dark">
+
+            <Container>
+
+              <NavBar.Brand>
+
+                <Link to={"/create-user"} className="nav-link">
+
+                  React MERN Stack CRUD
+
+                </Link>
+
+              </NavBar.Brand>
+
+              <Nav className="justify-content-end">
+
+                <Nav>
+
+                  <Link to={"/create-user"} class="nav-link">
+
+                    Create USER. 
+
+                  </Link>
+
+                </Nav>
+
+                <Nav>
+
+                  <Link to={"/user-list"} class="nav-link">
+
+                    USER List.
+
+                  </Link>
+
+                </Nav>
+
+              </Nav>  
+
+            </Container>
+
+          </NavBar>
+          
+        </header>
+
+        <Container>
+
+          <Row>
+
+            <Col md="12">
+            
+              <div className="wrapper">
+
+                <Switch>
+
+                  <Rourte exact path="/" component={CreateUser} />
+                  <Rourte path="/create-user" component={CreateUser} />
+                  <Rourte path="/edit-use:id" component={EditUser} />
+                  <Rourte path="/user-list" component={UserList} />
+
+                </Switch>
+
+              </div>
+            
+            </Col>
+
+          </Row>
+
+        </Container>
+
+      </div>
+    </Rourte>
   );
 }
 
